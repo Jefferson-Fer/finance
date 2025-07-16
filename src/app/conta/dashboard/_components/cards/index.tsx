@@ -150,6 +150,9 @@ export default function CardsInfo({ revenues, expenses }: Props) {
     return top4
   }, [expenses])
 
+  console.log('totalE: ', totalExpenseCurrentMonth)
+  console.log('totalr: ', totalRevenueCurrentMonth)
+
   cardsUser[0].value = netTotalAll
   cardsUser[1].value = totalRevenueCurrentMonth
   cardsUser[2].value = totalExpenseCurrentMonth

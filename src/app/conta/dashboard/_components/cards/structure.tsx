@@ -1,3 +1,5 @@
+import NumberFlow from '@number-flow/react'
+
 import { Icons } from '@/components/icons'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Text } from '@/components/ui/text'
@@ -23,7 +25,14 @@ export function StructureCard({ item, classContainer }: Props) {
       <CardContent>
         {item.value !== 0 && (
           <Text scale={'xl'} variant={item.variant}>
-            R$ {item.value}
+            <NumberFlow
+              value={item.value}
+              format={{
+                style: 'currency',
+                currency: 'BRL',
+                trailingZeroDisplay: 'stripIfInteger',
+              }}
+            />
           </Text>
         )}
         <Text scale={'xs'} variant={'body'} className="align-bottom">

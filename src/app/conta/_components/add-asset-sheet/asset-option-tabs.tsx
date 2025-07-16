@@ -217,7 +217,7 @@ export function AssetOptionTabs({ setIsOpen }: Props) {
             <div className="grid grid-cols-2 gap-2">
               <FormItem>
                 <FormLabel className="flex items-center justify-between">
-                  Data de recebimento
+                  Data do pagamento
                 </FormLabel>
 
                 <DatePickerSingle
@@ -280,7 +280,7 @@ export function AssetOptionTabs({ setIsOpen }: Props) {
                   </FormLabel>
                   <FormControl>
                     <Textarea
-                      placeholder="ex: Recebimento do Salário"
+                      placeholder="ex: Feira Mensal"
                       className="resize-none"
                       {...field}
                     />

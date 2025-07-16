@@ -22,7 +22,7 @@ export const createExpenseAction = authActionClient
       throw new Error('Erro ao criar despesa')
     }
 
-    revalidatePath('/conta', 'page')
+    revalidatePath('/conta', 'layout')
 
     revalidateTag('expenses_list' + profile.id)
     revalidateTag('assets_all_list' + profile.id)

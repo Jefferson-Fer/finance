@@ -31,7 +31,7 @@ export default async function DashboardPage() {
 
   return (
     <div className="flex flex-col gap-4">
-      {expenses || revenues ? (
+      {expenses.length > 0 || revenues.length > 0 ? (
         <ScrollArea className="size-full">
           <CardsInfo revenues={revenues} expenses={expenses} />
         </ScrollArea>
