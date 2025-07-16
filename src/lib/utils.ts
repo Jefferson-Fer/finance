@@ -32,7 +32,7 @@ export const validatePathByRole = (pathname: string, role: TypeProfile) => {
 }
 
 export const getURL = () => {
-  let url = env.NEXT_PUBLIC_APP_URL
+  let url = env.NEXT_PUBLIC_VERCEL_URL ?? env.NEXT_PUBLIC_APP_URL
   // Make sure to include `https://` when not localhost.
   url = url.startsWith('http') ? url : `https://${url}`
   // Make sure to include a trailing `/`.

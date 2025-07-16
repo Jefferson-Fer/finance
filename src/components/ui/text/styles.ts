@@ -17,6 +17,7 @@ export const textVariants = cva('leading-6 font-sans font-bold ', {
       default: 'text-foreground',
       body: 'text-muted-foreground',
       white: 'text-background',
+      constructive: 'text-constructive hover:text-constructive/80',
       destructive: 'text-destructive hover:text-destructive/80',
     },
     weight: {

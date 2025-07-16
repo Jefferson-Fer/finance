@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
 import EmptyState from '@/components/empty-state'
+import { ScrollArea } from '@/components/ui/scroll-area'
 import { SearchParams } from '@/contracts/commons'
 import { env } from '@/lib/env'
 import {
@@ -38,7 +39,9 @@ export default async function RevenuesPage(props: {
   return (
     <div className="flex flex-col gap-4">
       {revenues ? (
-        <RevenuesTableShell data={revenues} pageCount={pageCount} />
+        <ScrollArea className="size-full">
+          <RevenuesTableShell data={revenues} pageCount={pageCount} />
+        </ScrollArea>
       ) : (
         <EmptyState
           title="Nenhuma parcela a receber encontrada"

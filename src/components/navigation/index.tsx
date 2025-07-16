@@ -20,7 +20,7 @@ export function Navigation({
   ...props
 }: NavigationProps) {
   return (
-    <div className="h-16 bg-background text-foreground px-8 flex items-center justify-between">
+    <div className="w-full h-16 bg-background text-foreground p-4 flex items-center justify-between">
       <nav>
         <NavigationMenu viewport={false} {...props}>
           <NavigationMenuList>

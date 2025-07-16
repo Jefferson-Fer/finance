@@ -21,11 +21,6 @@ interface NavMainProps {
 export function NavMain({ links, baseUrl, userType }: NavMainProps) {
   const segment = useSelectedLayoutSegment()
 
-  const IconLink = (icon: keyof typeof Icons) => {
-    const Icon = Icons[icon]
-    return <Icon className="size-10 bg-amber-300" />
-  }
-
   const sidebarLinksWithActived = useMemo(() => {
     return links
       .filter((link) => !link.hideTo?.includes(userType))
@@ -38,12 +33,13 @@ export function NavMain({ links, baseUrl, userType }: NavMainProps) {
   }, [links, segment, userType])
 
   return sidebarLinksWithActived.map(({ actived, icon, title, url }) => {
+    const Icon = Icons[icon as keyof typeof Icons]
     return (
       <NavigationMenuItem key={title}>
         <NavigationMenuLink asChild>
           <ButtonLink
             className={cn(
-              'flex items-center gap-3 rounded-md px-3 py-2 text-muted-foreground transition-all hover:text-foreground group-[.isOpen]:justify-center h-8',
+              'flex flex-row items-center justify-center gap-3 rounded-md px-3 py-2 text-muted-foreground transition-all hover:text-foreground group-[.isOpen]:justify-center h-8',
               {
                 'text-foreground': actived,
               },
@@ -51,7 +47,9 @@ export function NavMain({ links, baseUrl, userType }: NavMainProps) {
             variant="ghost"
             href={`${baseUrl}${url}`}
           >
-            {IconLink(icon)}
+            {Icon && (
+              <Icon className={cn('h-4 w-4', { 'text-foreground': actived })} />
+            )}
             <span>{title}</span>
           </ButtonLink>
         </NavigationMenuLink>

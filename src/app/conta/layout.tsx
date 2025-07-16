@@ -34,8 +34,8 @@ export default async function ContaLayout({ children }: ContaLayoutProps) {
 
           <Navigation type="user" profile={profile} />
 
-          <ScrollArea className="w-full">
-            <div className="h-full flex flex-col gap-4 lg:gap-2 p-4 max-w-screen-xl xl:mx-auto">
+          <ScrollArea className="page-scroll">
+            <div className="h-full flex flex-col gap-4 lg:gap-2 p-4">
               {children}
             </div>
           </ScrollArea>

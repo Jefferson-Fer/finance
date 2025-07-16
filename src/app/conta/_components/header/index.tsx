@@ -10,7 +10,7 @@ interface HeaderAccountProps {
 
 export function HeaderAccount({ profile }: HeaderAccountProps) {
   return (
-    <header className="bg-header-background text-header-text-color px-8 py-4 flex items-center justify-between">
+    <header className="w-full bg-header-background text-header-text-color px-8 py-4 flex items-center justify-between">
       <div className="flex items-center gap-2">
         <div className="flex md:hidden">
           <DropdownSidebarUser profile={profile} />

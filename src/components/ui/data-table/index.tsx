@@ -295,7 +295,7 @@ export function DataTable<TData, TValue>({
   return (
     <div
       className={cn(
-        'w-[91vmin] sm:w-[95vmax] md:w-[calc(95vw-var(--sidebar-width))] xl:w-full space-y-3 overflow-auto transition-all duration-300',
+        'w-[94vmin] sm:w-[95vmax] md:w-[calc(95vw-var(--sidebar-width))] xl:w-full space-y-3 overflow-auto transition-all duration-300',
       )}
     >
       <DataTableToolbar
